@@ -4,10 +4,11 @@ public class ItemPriceCalculator {
 
 	public int calculateItemPriceForCheckout(List<Item> listOfItems) {
 
-		Item firstItem = listOfItems.get(0);
-		Item secondItem = listOfItems.get(1);
-		
-		return calculatePriceOfItem(firstItem) + calculatePriceOfItem(secondItem);
+		int totalPriceAtCheckout = 0;
+		for (Item item : listOfItems) {
+			totalPriceAtCheckout += calculatePriceOfItem(item);
+		}
+		return totalPriceAtCheckout;
 	}
 
 	private int calculatePriceOfItem(Item item) {
