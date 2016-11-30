@@ -1,9 +1,13 @@
 
 public class ItemPriceCalculator {
 
+	public int calculateItemPriceForCheckout(Item firstItem, Item secondItem) {
 
-	public int calculateItemPrice(Item firstItem, Item secondItem) {
-		return firstItem.getPriceOfItem() * firstItem.getQuantityOfItem() + secondItem.getPriceOfItem() * secondItem.getQuantityOfItem();
+		return calculatePriceOfItem(firstItem) + calculatePriceOfItem(secondItem);
+	}
+
+	private int calculatePriceOfItem(Item item) {
+		return item.getPriceOfItem() * item.getQuantityOfItem();
 	}
 
 }

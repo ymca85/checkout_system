@@ -10,7 +10,7 @@ public class ItemPriceCalculatorTests {
 		ItemPriceCalculator itemPriceCalculator = new ItemPriceCalculator();
 		Item item = new Item(100, 1);
 		Item dummyItemZeroPriceZeroQuantity = new Item(0, 0);
-		assertEquals(itemPriceCalculator.calculateItemPrice(item, dummyItemZeroPriceZeroQuantity), 100);
+		assertEquals(itemPriceCalculator.calculateItemPriceForCheckout(item, dummyItemZeroPriceZeroQuantity), 100);
 	}
 
 	@Test
@@ -19,7 +19,7 @@ public class ItemPriceCalculatorTests {
 		ItemPriceCalculator itemPriceCalculator = new ItemPriceCalculator();
 		Item item = new Item(100, 2);
 		Item dummyItemZeroPriceZeroQuantity = new Item(0, 0);
-		assertEquals(itemPriceCalculator.calculateItemPrice(item, dummyItemZeroPriceZeroQuantity), 200);
+		assertEquals(itemPriceCalculator.calculateItemPriceForCheckout(item, dummyItemZeroPriceZeroQuantity), 200);
 	}
 
 	@Test
@@ -28,7 +28,7 @@ public class ItemPriceCalculatorTests {
 		ItemPriceCalculator itemPriceCalculator = new ItemPriceCalculator();
 		Item item = new Item(100, 10);
 		Item dummyItemZeroPriceZeroQuantity = new Item(0, 0);
-		assertEquals(itemPriceCalculator.calculateItemPrice(item, dummyItemZeroPriceZeroQuantity), 1000);
+		assertEquals(itemPriceCalculator.calculateItemPriceForCheckout(item, dummyItemZeroPriceZeroQuantity), 1000);
 	}
 
 	@Test
@@ -39,7 +39,7 @@ public class ItemPriceCalculatorTests {
 		Item firstItem = new Item(100, 2);
 		Item secondItem = new Item(200, 1);
 
-		assertEquals(itemPriceCalculator.calculateItemPrice(firstItem, secondItem), 400);
+		assertEquals(itemPriceCalculator.calculateItemPriceForCheckout(firstItem, secondItem), 400);
 	}
 
 }
