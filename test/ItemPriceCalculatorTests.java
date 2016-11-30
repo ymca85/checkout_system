@@ -54,5 +54,19 @@ public class ItemPriceCalculatorTests {
 
 		assertEquals(itemPriceCalculator.calculateItemPriceForCheckout(listOfItems), 400);
 	}
+	
+	@Test
+	public void test_calculate_price_of_three_different_items() {
+
+		ItemPriceCalculator itemPriceCalculator = new ItemPriceCalculator();
+
+		Item firstItem = new Item(100, 2);
+		Item secondItem = new Item(200, 1);
+		Item thirdItem = new Item(300, 2);
+		
+		List<Item> listOfItems = Arrays.asList(firstItem, secondItem, thirdItem);
+
+		assertEquals(itemPriceCalculator.calculateItemPriceForCheckout(listOfItems), 1000);
+	}
 
 }
