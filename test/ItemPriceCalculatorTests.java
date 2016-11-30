@@ -8,7 +8,7 @@ public class ItemPriceCalculatorTests {
 	public void test_calculate_price_of_one_item() {
 
 		ItemPriceCalculator itemPriceCalculator = new ItemPriceCalculator();
-		assertTrue(itemPriceCalculator.calculateItemPrice(100) == 100);
+		assertTrue(itemPriceCalculator.calculateItemPrice(100, 1) == 100);
 	}
-
+	
 }
